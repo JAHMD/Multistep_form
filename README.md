@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]([https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ/solutions/new](https://www.frontendmentor.io/solutions/multistep-form-e6wHyBROOB))
+- Solution URL: [Solution](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ/solutions/new](https://www.frontendmentor.io/solutions/multistep-form-e6wHyBROOB)
 - Live Site URL: [Demo](https://jahmd.github.io/Multistep_form/)
 
 ## My process
