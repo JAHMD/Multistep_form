@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .step-num {
+    @apply w-8 aspect-square border rounded-full border-neutral-LightGray flex justify-center items-center text-neutral-White;
+  }
+  .step-num.active {
+    @apply border-primary-PastelBlue bg-primary-PastelBlue text-primary-MarineBlue;
+  }
+  .step {
+    @apply hidden md:block;
+  }
+  .btn {
+    @apply py-3 px-6 rounded-lg cursor-pointer select-none;
+  }
+  .btn-blue {
+    @apply bg-primary-MarineBlue hover:bg-primary-MarineBlue/90 text-neutral-LightGray transition-colors;
+  }
+  .input-field-container {
+    @apply flex flex-col;
+  }
+  .input-field {
+    @apply py-2 px-4 mt-1 rounded-lg border  focus:border-primary-PurplishBlue outline-none transition-colors;
+  }
+  .plan {
+    @apply min-w-[110px] flex-1 flex items-center md:items-start md:flex-col border rounded-lg p-4 border-neutral-LightGray cursor-pointer transition-colors;
+  }
+  .plan.active,
+  .plan:hover {
+    @apply bg-neutral-Magnolia border-primary-PurplishBlue;
+  }
+  .m-y {
+    @apply inline-block text-neutral-CoolGray transition-colors;
+  }
+  .m-y.active {
+    @apply text-primary-MarineBlue;
+  }
+  .option {
+    @apply flex items-center p-4 rounded-lg border border-neutral-LightGray hover:border-primary-PurplishBlue hover:bg-neutral-Magnolia text-sm transition-colors cursor-pointer;
+  }
+  .option.active {
+    @apply border-primary-PurplishBlue bg-neutral-Magnolia;
+  }
+  .option.active button {
+    @apply bg-primary-PurplishBlue;
+  }
+  .check-box.selected {
+    @apply bg-primary-PurplishBlue;
+  }
+  .section {
+    @apply h-[350px];
+  }
+}

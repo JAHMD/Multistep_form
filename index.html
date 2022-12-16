@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./public/styles.css" />
+    <title>Multi-step form</title>
+    <script
+      src="https://kit.fontawesome.com/f1c1c1e611.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./public/index.js" defer></script>
+  </head>
+  <body class="text-base font-ubuntu bg-neutral-Magnolia">
+    <main class="h-screen flex justify-center items-center relative">
+      <section
+        class="w-full md:w-auto mx-6 p-6 md:p-4 rounded-xl flex items-center gap-20 shadow-md bg-neutral-White"
+      >
+        <div
+          class="absolute md:min-w-[210px] md:relative top-0 left-0 right-0 -z-10 md:z-10"
+        >
+          <img
+            src="./images/bg-sidebar-desktop.svg"
+            alt="sidebar background image"
+            class="w-full object-cover hidden md:block"
+          />
+          <img
+            src="./images/bg-sidebar-mobile.svg"
+            alt="sidebar background mobile image"
+            class="w-full object-cover md:hidden"
+          />
+          <ul
+            class="w-full p-8 flex justify-center gap-4 md:block absolute top-0 text-sm font-semibold"
+          >
+            <li class="flex items-center gap-6 relative">
+              <span class="step-num active">1</span>
+              <div class="step uppercase">
+                <span class="text-neutral-CoolGray">step 1</span>
+                <p class="text-neutral-White">your info</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-6 relative md:mt-6">
+              <span class="step-num">2</span>
+              <div class="step uppercase">
+                <span class="text-neutral-CoolGray">step 2</span>
+                <p class="text-neutral-White">select plan</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-6 relative md:mt-6">
+              <span class="step-num">3</span>
+              <div class="step uppercase">
+                <span class="text-neutral-CoolGray">step 3</span>
+                <p class="text-neutral-White">add-ons</p>
+              </div>
+            </li>
+            <li class="flex items-center gap-6 relative md:mt-6">
+              <span class="step-num">4</span>
+              <div class="step uppercase">
+                <span class="text-neutral-CoolGray">step 4</span>
+                <p class="text-neutral-White">summary</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="sections w-full flex flex-col justify-between md:w-auto md:mr-20"
+        >
+          <div id="info-section" data-step="1" class="section">
+            <div class="heading">
+              <h2 class="text-3xl font-bold text-primary-MarineBlue">
+                Personal info
+              </h2>
+              <p class="text-neutral-CoolGray">
+                Please provide your name, email address and phone number.
+              </p>
+            </div>
+            <form action="" class="mt-6 space-y-6">
+              <div class="input-field-container">
+                <label
+                  for="name"
+                  class="text-primary-MarineBlue flex items-center justify-between text-sm"
+                  >Name
+                  <span
+                    class="err-msg text-primary-StrawberryRed font-semibold hidden"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="e.g.Stephen King"
+                  class="input-field"
+                />
+              </div>
+              <div class="input-field-container">
+                <label
+                  for="e-address"
+                  class="text-primary-MarineBlue flex items-center justify-between text-sm"
+                  >Email Address
+                  <span
+                    class="err-msg text-primary-StrawberryRed font-semibold hidden"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="e.g.stephanking@lorem.com"
+                  class="input-field"
+                />
+              </div>
+              <div class="input-field-container">
+                <label
+                  for="phone"
+                  class="text-primary-MarineBlue flex items-center justify-between text-sm"
+                  >Phone
+                  <span
+                    class="err-msg text-primary-StrawberryRed font-semibold hidden"
+                    >This field is required</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="e.g.+1 234 567 890"
+                  class="input-field"
+                />
+              </div>
+            </form>
+          </div>
+          <div id="plans-section" data-step="2" class="section hidden">
+            <div class="heading">
+              <h2 class="text-3xl font-bold text-primary-MarineBlue">
+                Select your plan
+              </h2>
+              <p class="text-neutral-CoolGray">
+                You have the option of monthly or yearly billing.
+              </p>
+            </div>
+            <div
+              class="plans-container w-full lg:w-[440px] mt-8 flex flex-col md:flex-row gap-4"
+            >
+              <div class="plan active" data-plan="Arcade">
+                <img
+                  src="./images/icon-arcade.svg"
+                  alt="arcade icon"
+                  class="mr-4 md:mr-0"
+                />
+                <div>
+                  <p class="md:mt-8 text-primary-MarineBlue font-semibold">
+                    Arcade
+                  </p>
+                  <span class="text-neutral-CoolGray text-sm"
+                    >$9/ <span class="plan-per">mo</span></span
+                  >
+                </div>
+              </div>
+              <div class="plan" data-plan="Advanced">
+                <img
+                  src="./images/icon-advanced.svg"
+                  alt="arcade icon"
+                  class="mr-4 md:mr-0"
+                />
+                <div>
+                  <p class="md:mt-8 text-primary-MarineBlue font-semibold">
+                    Advanced
+                  </p>
+                  <span class="text-neutral-CoolGray text-sm"
+                    >$12/<span class="plan-per">mo</span></span
+                  >
+                </div>
+              </div>
+              <div class="plan" data-plan="Pro">
+                <img
+                  src="./images/icon-pro.svg"
+                  alt="arcade icon"
+                  class="mr-4 md:mr-0"
+                />
+                <div>
+                  <p class="md:mt-8 text-primary-MarineBlue font-semibold">
+                    Pro
+                  </p>
+                  <span class="text-neutral-CoolGray text-sm"
+                    >$15/<span class="plan-per">mo</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-6 md:mb-10 p-4 rounded-lg flex justify-center items-center gap-4 bg-neutral-Magnolia"
+            >
+              <span class="m-y active">Monthly</span>
+              <button
+                class="m-y-btn w-10 p-1 flex rounded-full bg-primary-MarineBlue"
+              >
+                <span
+                  class="inline-block w-3 h-3 rounded-full bg-neutral-White relative left-0 transition-all"
+                ></span>
+              </button>
+              <span class="m-y">Yearly</span>
+            </div>
+          </div>
+          <div id="pick-add-ons" data-step="3" class="section hidden">
+            <div class="heading">
+              <h2 class="text-3xl font-bold text-primary-MarineBlue">
+                Pick add-ons
+              </h2>
+              <p class="text-neutral-CoolGray">
+                Add-ons help enhance your gaming experience.
+              </p>
+            </div>
+            <div class="options w-full lg:w-[440px] mt-6">
+              <div class="option group active">
+                <button
+                  class="check-box w-5 aspect-square mr-4 border text-xs border-neutral-LightGray rounded group-hover:bg-primary-PurplishBlue transition-colors"
+                >
+                  <i class="fa-solid fa-check text-neutral-White"></i>
+                </button>
+                <div class="txt-content">
+                  <h3 class="font-semibold text-primary-MarineBlue">
+                    Online service
+                  </h3>
+                  <p class="text-sm text-neutral-CoolGray">
+                    Access to multiplayer games
+                  </p>
+                </div>
+                <span
+                  class="inline-block ml-auto text-sm text-primary-PurplishBlue"
+                  >+$1/ <span class="pick-adds-per">mo</span></span
+                >
+              </div>
+              <div class="option group mt-4">
+                <button
+                  class="check-box w-5 aspect-square mr-4 border text-xs border-neutral-LightGray rounded group-hover:bg-primary-PurplishBlue text-neutral-White transition-colors"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <div class="txt-content">
+                  <h3 class="font-semibold text-primary-MarineBlue">
+                    Larger storage
+                  </h3>
+                  <p class="text-sm text-neutral-CoolGray">
+                    Extra 1TB of cloud save
+                  </p>
+                </div>
+                <span
+                  class="inline-block ml-auto text-sm text-primary-PurplishBlue"
+                  >+$2/ <span class="pick-adds-per">mo</span></span
+                >
+              </div>
+              <div class="option group mt-4">
+                <button
+                  class="check-box w-5 aspect-square mr-4 border text-xs border-neutral-LightGray rounded group-hover:bg-primary-PurplishBlue text-neutral-White transition-colors"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <div class="txt-content">
+                  <h3 class="font-semibold text-primary-MarineBlue">
+                    Customizable profile
+                  </h3>
+                  <p class="text-sm text-neutral-CoolGray">
+                    Custom theme on your profile
+                  </p>
+                </div>
+                <span
+                  class="inline-block ml-auto text-sm text-primary-PurplishBlue"
+                  >+$1/ <span class="pick-adds-per">mo</span></span
+                >
+              </div>
+            </div>
+          </div>
+          <div id="summary-section" data-step="4" class="section hidden">
+            <div class="heading">
+              <h2 class="text-3xl font-bold text-primary-MarineBlue">
+                Finishing up
+              </h2>
+              <p class="text-neutral-CoolGray">
+                Double-check everything looks OK before confirming.
+              </p>
+            </div>
+            <div class="summary w-full mt-8">
+              <article class="p-4 rounded-lg bg-neutral-Alabaster text-sm">
+                <div class="pb-4 border-b flex justify-between items-center">
+                  <div>
+                    <p class="text-primary-MarineBlue text-base font-bold">
+                      Arcade (<span>Yearly</span>)
+                    </p>
+                    <button
+                      class="text-neutral-CoolGray underline cursor-pointer"
+                    >
+                      Change
+                    </button>
+                  </div>
+                  <span class="inline-block text-primary-MarineBlue font-bold"
+                    >$90/yr</span
+                  >
+                </div>
+                <div class="pt-4">
+                  <p class="mb-4 text-neutral-CoolGray flex justify-between">
+                    Online service <span>+$10/yr</span>
+                  </p>
+                  <p class="text-neutral-CoolGray flex justify-between">
+                    Large storage <span>+$20/yr</span>
+                  </p>
+                </div>
+              </article>
+              <div class="p-4 flex justify-between items-center">
+                <p class="text-neutral-CoolGray">
+                  Total (<span>per year</span>)
+                </p>
+                <span class="text-primary-PurplishBlue text-lg font-bold"
+                  >$120/yr</span
+                >
+              </div>
+            </div>
+          </div>
+          <div id="thank-you-section" data-step="5" class="section hidden">
+            <div
+              class="w-full flex justify-center items-center flex-col space-y-4 py-10"
+            >
+              <img
+                src="./images/icon-thank-you.svg"
+                alt="thank you page icon"
+              />
+              <h2 class="text-xl font-bold text-primary-MarineBlue">
+                Thank you!
+              </h2>
+              <p class="max-w-[440px] text-center text-neutral-CoolGray">
+                Thanks for confirming you subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
+          </div>
+          <div
+            class="buttons-container w-full mt-4 py-4 px-6 md:p-0 flex justify-between items-center absolute md:relative bottom-0 left-0 md:right-20 bg-neutral-White text-sm font-semibold"
+          >
+            <button
+              id="back-btn"
+              class="btn text-neutral-CoolGray hover:text-primary-MarineBlue transition-colors hidden"
+            >
+              Go Back
+            </button>
+            <button id="next-btn" class="btn btn-blue ml-auto">
+              Next Step
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
