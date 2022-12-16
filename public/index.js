@@ -20,8 +20,8 @@ let secCounter = 0;
 let stepsCounter = 0;
 
 nextBtn.addEventListener("click", () => {
-  // const state = checkInfo();
-  // if (!state) return;
+  const state = checkInfo();
+  if (!state) return;
   secCounter++;
   stepsCounter =
     stepsCounter >= stepsProgress.length - 1 ? 3 : stepsCounter + 1;
