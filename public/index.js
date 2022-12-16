@@ -99,7 +99,6 @@ function checkInfo() {
   const validPhone = /^[0-9]+$/gi;
   const validationConditions = [validName, validEmail, validPhone];
   const states = [];
-
   for (let i = 0; i < inputFields.length; i++) {
     const errMsg =
       inputFields[i].previousElementSibling.querySelector(".err-msg");
